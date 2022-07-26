@@ -15,8 +15,9 @@ app.use(express.urlencoded({extended:true}));
 //Routes imports
 // here the order counts. 
 app.use(statusRoute); // this route doesn't need authentication
-app.use(authorizationRoute); // these route are used to get or validadte a token. 
-app.use(jwtbearerAuthenticationMiddleware, userRoute); //this ensures that all user routes are authenticated. The access without a token is simply not allowed
+//app.use(authorizationRoute); // these route are used to get or validadte a token. 
+//app.use(jwtbearerAuthenticationMiddleware, userRoute); //this ensures that all user routes are authenticated. The access without a token is simply not allowed
+app.use(userRoute);
 
 /* if I put app.use(authorizationRoute) before app.use(statusRoute),
  it will ask for an authentication before we can check the api status*/
@@ -25,7 +26,7 @@ app.use(jwtbearerAuthenticationMiddleware, userRoute); //this ensures that all u
 //errorHandlers
 app.use(errorHandler); //this will take care of all errors
 
-app.listen(3000, ()=>{ // to access this:  http://localhost:3000
+app.listen(3030, ()=>{ // to access this:  http://localhost:3000
     console.log('porta 3000 ');
 })
 // this way, we can create a server very easily 
