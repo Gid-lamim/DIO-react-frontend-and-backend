@@ -1,11 +1,12 @@
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 
-CREATE TABLE IF NOT EXISTS application_user(
+
+CREATE TABLE IF NOT EXISTS eshop_messages(
     uuid uuid DEFAULT uuid_generate_v4(),
-    username VARCHAR NOT NULL,
-    password VARCHAR NOT NULL,
+    email VARCHAR NOT NULL,
+    message VARCHAR NOT NULL,
+    creationdate VARCHAR NOT NULL,
     PRIMARY KEY (uuid)
 )
 
-INSERT INTO application_user(username, password) VALUES ('admin', crypt('admin','my_salt'))
+INSERT INTO eshop_messages(email, message, creationdate) VALUES ('admin@goggles.com', 'Produto muito bom', '26/07/22')

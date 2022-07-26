@@ -5,6 +5,7 @@ import errorHandler from "./middlewares/error-handler.middleware";
 import authorizationRoute from "./routes/authorization.route";
 import statusRoute from "./routes/status.route";
 import userRoute from "./routes/users.route";
+import messageRoute from "./routes/message.route";
 
 const app = express();
 
@@ -17,7 +18,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(statusRoute); // this route doesn't need authentication
 //app.use(authorizationRoute); // these route are used to get or validadte a token. 
 //app.use(jwtbearerAuthenticationMiddleware, userRoute); //this ensures that all user routes are authenticated. The access without a token is simply not allowed
-app.use(userRoute);
+app.use(messageRoute);
 
 /* if I put app.use(authorizationRoute) before app.use(statusRoute),
  it will ask for an authentication before we can check the api status*/
