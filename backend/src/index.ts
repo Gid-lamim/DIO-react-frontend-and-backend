@@ -28,6 +28,6 @@ app.use(messageRoute);
 app.use(errorHandler); //this will take care of all errors
 
 app.listen(3030, ()=>{ // to access this:  http://localhost:3000
-    console.log('porta 3000 ');
+    console.log('rodando na porta 3030 ');
 })
 // this way, we can create a server very easily 
