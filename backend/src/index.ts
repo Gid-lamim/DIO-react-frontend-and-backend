@@ -6,8 +6,10 @@ import authorizationRoute from "./routes/authorization.route";
 import statusRoute from "./routes/status.route";
 import userRoute from "./routes/users.route";
 import messageRoute from "./routes/message.route";
+import cors from 'cors';
 
 const app = express();
+app.use(cors());
 
 //basic setup for express
 app.use(express.json()); //this will enable the code to understand json bodies
@@ -27,7 +29,7 @@ app.use(messageRoute);
 //errorHandlers
 app.use(errorHandler); //this will take care of all errors
 
-app.listen(3030, ()=>{ // to access this:  http://localhost:3000
-    console.log('rodando na porta 3030 ');
+app.listen(5000, ()=>{ // to access this:  http://localhost:3000
+    console.log('rodando na porta 5000 ');
 })
 // this way, we can create a server very easily 

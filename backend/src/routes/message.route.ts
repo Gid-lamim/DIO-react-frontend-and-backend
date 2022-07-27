@@ -5,7 +5,7 @@ import messageRepository from "../repositories/message.repository";
 const messageRoute = Router();
 
 //this will list all messages created by the customers
-messageRoute.get('/messages', async (req:Request, res:Response, next:NextFunction)=>{
+messageRoute.get('/message', async (req:Request, res:Response, next:NextFunction)=>{
 
     //this will get the messages from the database
     const getMessages = await messageRepository.findAllMessages();
@@ -14,7 +14,7 @@ messageRoute.get('/messages', async (req:Request, res:Response, next:NextFunctio
     res.status(200).send(getMessages);
 });
 
-messageRoute.post('/messages', async (req:Request, res:Response, next:NextFunction)=>{
+messageRoute.post('/message', async (req:Request, res:Response, next:NextFunction)=>{
     try{
         /* exmple of body
             {
