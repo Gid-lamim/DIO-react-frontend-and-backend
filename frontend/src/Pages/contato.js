@@ -14,16 +14,19 @@ const Contatos = () => {
     useEffect(async () => {
         const response = await fetch(url)
         const data = await response.json();
-        console.log(data);
         setMessage(data);
 
-    }, [render]) //[render] 
+    }, [render]) //[render] it will rerender the page everytime render changes 
 
     const sendMessage = () => {
         setValidator(false);
         if(author.length <= 0 || content.length <= 0){
             return setValidator(!validator)
+        } else if (content.length <=6 ){
+            return setValidator(!validator)
         }
+
+    
         const bodyForm = {
             email: author,
             message: content,
@@ -36,21 +39,24 @@ const Contatos = () => {
             },
             body: JSON.stringify(bodyForm)
         })
-        .then((response) => response.json())
+        //then is used to treat the response after fetch
+        //.then((response) => response.json())
         .then((data) => {
-            if(data.id) {
+            if(data.json) {
+                console.log(data.json? 'y': 'n');
                 setRender(true);
-                setSuccess(true);
-                setTimeout(() => {
+                setSuccess(true);//this will trigger the message 
+                setTimeout(() => {//this will hide the message after 5 seconds 
                     setSuccess(false);
                 }, 5000)
             }
         })
-        
+
+        setRender(false); // we need to set render back to false, othere wise the page won't rerender 
         setAuthor('');
         setContent('');
         
-        console.log(content)
+        
     }  
 
     return(
@@ -60,9 +66,9 @@ const Contatos = () => {
                 <TextField id="message" label="Message" value={content} onChange={(event)=>{setContent(event.target.value)}} fullWidth/>
             </Grid>
 
-            {validator && 
+            {validator && // if validator is true, it will display the message 
                 <div className="alert alert-warning alert-dismissible fade show mt-2" role="alert">
-                    <strong>Por favor preencha todos os campos!</strong>
+                    <strong>Por favor preencha todos os campos corretamente!</strong>
                     <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             }
