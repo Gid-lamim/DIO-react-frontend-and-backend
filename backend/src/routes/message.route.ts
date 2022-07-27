@@ -20,7 +20,6 @@ messageRoute.post('/message', async (req:Request, res:Response, next:NextFunctio
             {
                 "email": "gugbesh@goggles.com",
                 "message": "Não gostei dos produto",
-                "creationdate": "26/07/22"
 	        }
         */
         const newMessage = req.body;

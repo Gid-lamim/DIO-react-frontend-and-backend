@@ -14,8 +14,10 @@ const Contatos = () => {
     useEffect(async () => {
         const response = await fetch(url)
         const data = await response.json();
+        console.log(data);
         setMessage(data);
-    }, [render])
+
+    }, [render]) //[render] 
 
     const sendMessage = () => {
         setValidator(false);
@@ -72,16 +74,17 @@ const Contatos = () => {
             }
 
             <Button onClick={sendMessage} className="mt-2" variant="contained" color="primary">
-                Sent
+                Send message
             </Button>
 
             {message.map((content) => {
+               
                 return(
-                    <div className="card mt-2" key={content.id}>
+                    <div className="card mt-2" key={content.uuid}>
                         <div className="card-body">
                             <h5 className="card-title">{content.email}</h5>
                             <p className="card-text">{content.message}</p>
-                            <p className="card-text"><small className="text-muted">{content.created_at}</small></p>
+                            <p className="card-text"><small className="text-muted">{content.creationdate}</small></p>
                         </div>
                     </div>
                 )

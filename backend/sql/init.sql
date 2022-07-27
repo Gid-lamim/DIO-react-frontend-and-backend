@@ -9,4 +9,4 @@ CREATE TABLE IF NOT EXISTS eshop_messages(
     PRIMARY KEY (uuid)
 )
 
-INSERT INTO eshop_messages(email, message, creationdate) VALUES ('admin@goggles.com', 'Produto muito bom', '26/07/22')
+INSERT INTO eshop_messages(email, message, creationdate) VALUES ('admin@goggles.com', 'Produto muito bom', now())

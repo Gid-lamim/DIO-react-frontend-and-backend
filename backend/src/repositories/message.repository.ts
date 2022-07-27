@@ -10,10 +10,11 @@ class MessageRepository{
     async findAllMessages(): Promise<Message[]> { //it'll return a message
         try {
             const sqlQuery = `
-            SELECT uuid, email, message, creationdate 
+            SELECT uuid, email, message, TO_CHAR(creationdate, 'MM/DD/YY hh:mm') AS creationdate
             FROM eshop_messages
             `;
-        
+            // how to use to_char   -->  https://dataschool.com/learn-sql/dates/
+            
             const {rows} = await db.query<Message>(sqlQuery);
             
             return rows;
@@ -30,12 +31,12 @@ class MessageRepository{
                 (
                     email, message, creationdate                    
                 ) 
-                VALUES ($1, $2, $3)
+                VALUES ($1, $2, now())
                 RETURNING uuid
             `;
             // RETURNING uuid   -->  it asks the database to return the generated uuid
-            
-            const values = [message.email, message.message, message.creationdate];
+            // now() will enter the current date when the message is created 
+            const values = [message.email, message.message];
             
             const { rows } = await db.query<{uuid:string}>(sqlScript,values); //here we run the sql code to add the user. it will return a list of rows with one columns, the uuid column.
 
