@@ -7,8 +7,7 @@ import Card from './Card';
 const Products = (props)  =>{
 
     
-console.log(props.products);
-console.log('props');
+
 return<>
                 {props.products.map(item => {
                     

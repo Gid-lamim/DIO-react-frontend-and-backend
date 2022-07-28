@@ -22,7 +22,7 @@ const productsList = [
       selected: false
     },
     {
-      id_product: 9,
+      id_product: 3,
       category: "MTB",
       fk_idcategorys: 1,
       name_product: "BICICLETA MTB ARO 29 ROCKRIDER ST120",
@@ -44,7 +44,7 @@ const productsList = [
       selected: false
     },
     {
-      id_product: 10,
+      id_product: 5,
       category: "infantil",
       fk_idcategorys: 2,
       name_product: "Bicicleta infantil aro 20 Rockrider ST500",
@@ -55,18 +55,18 @@ const productsList = [
       selected: false
     },
     {
-      id_product: 11,
+      id_product: 6,
       category: "MTB",
       fk_idcategorys: 1,
       name_product: "BICICLETA ARO 29 XKS FREIO A DISCO 21 MARCHAS",
       price: 979.51,
       image: "./images/bicicletas/BICICLETA ARO 29 XKS FREIO A DISCO 21 MARCHAS.webp",
-      id_categorys: 2,
+      id_categorys: 1,
       name_categorys: "",
       selected: false
     },
     {
-      id_product: 12,
+      id_product: 7,
       category: "RETRO",
       fk_idcategorys: 3,
       name_product: "Bicicleta de Passeio KLS Retro Aro 26 com Freios V-brake",
@@ -77,46 +77,46 @@ const productsList = [
       selected: false
     },
     {
-      id_product: 13,
+      id_product: 8,
       category: "SPEED",
       fk_idcategorys: 4,
       name_product: "BICICLETA DE ESTRADA TRIBAN RC120",
       price: 3999.99,
       image: "./images/bicicletas/BICICLETA DE ESTRADA TRIBAN RC120.webp",
-      id_categorys: 3,
+      id_categorys: 4,
       name_categorys: "",
       selected: false
     },
     {
-      id_product: 14,
+      id_product: 9,
       category: "MTB",
       fk_idcategorys: 1,
       name_product: "Bicicleta Aro 29 KSW Alumínio 12 Velocidades Suspenção a Ar e Trava",
       price: 350,
       image: "./images/bicicletas/Bicicleta Aro 29 KSW Alumínio 12 Velocidades Suspenção a Ar e Trava.webp",
-      id_categorys: 4,
+      id_categorys: 1,
       name_categorys: "Seleções nacionais",
       selected: false
     },
     {
-      id_product: 15,
+      id_product: 10,
       category: "STATIONARY",
       fk_idcategorys: 5,
       name_product: "BIKE SPINNING BICICLETA ERGOMETRICA CICLO COMPUTADOR DIGITAL LCD SUPORT",
       price: 399,
       image: "./images/bicicletas/BIKE SPINNING BICICLETA ERGOMETRICA CICLO COMPUTADOR DIGITAL LCD SUPORT.webp",
-      id_categorys: 4,
+      id_categorys: 5,
       name_categorys: "",
       selected: false
     },
     {
-      id_product: 16,
+      id_product: 11,
       category: "infantil",
-      fk_idcategorys: 5,
+      fk_idcategorys: 2,
       name_product: "Bicicleta Infantil Sense Grom Impact Aro 16 2021",
       price: 180,
       image: "./images/bicicletas/Bicicleta Infantil Sense Grom Impact Aro 16 2021.webp",
-      id_categorys: 5,
+      id_categorys: 2,
       name_categorys: "",
       selected: false
     },
