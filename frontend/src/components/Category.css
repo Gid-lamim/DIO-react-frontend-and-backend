@@ -1,0 +1,11 @@
+.itemCategory{
+    margin: 1rem 0;
+    display: flex;
+    
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+input{
+    margin: 10px;
+}
